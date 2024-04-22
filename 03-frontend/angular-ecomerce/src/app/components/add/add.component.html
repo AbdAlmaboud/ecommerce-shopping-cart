@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product and Category</title>
+    
+</head>
+
+<body>
+    <form id="categoryForm" (submit)=onSubmitCategory()>
+        <h2>Add Product Category</h2>
+        <!-- <label for="Category.categoryName">Category Name:</label> -->
+
+        <label for="Category.categoryName">Category Name:</label>
+        <input type="text" id="Category.categoryName" name="categoryName" [(ngModel)]="Category.categoryName" required>
+
+
+        <button type="submit">Add Category</button>
+    </form>
+     <form id="productForm"(submit)=onSubmitProduct()>
+        <h2>Add Product</h2>
+
+        <label for="protected.SKU">SKU:</label>
+        <input type="text" id="protected.SKU" name="SKU" [(ngModel)]="protected.sku" required>
+
+
+        <label for="protected.name">Product Name:</label>
+        <input type="text" id="protected.name" name="protected.name" [(ngModel)]="protected.name" required>
+
+        <label for="protected.Description">Description:</label>
+        <input type="text" id="protected.Description" name="protected.Description" [(ngModel)]="protected.description" required>
+
+        <label for="protected.unitPrice">Unit Price:</label>
+        <input type="text" id="unitPrice.unitPrice" name="unitPrice.unitPrice" [(ngModel)]="protected.unitPrice" required>
+
+        <label for="protected.imageUrl">Image URL:</label>
+        <input type="text" id="protected.imageUrl" name="protected.imageUrl" [(ngModel)]="protected.imageUrl" required>
+
+        <label for="protected.active">Active:</label>
+        <select id="protected.active" name="protected.active" [(ngModel)]="protected.active" required>
+            <p>{{protected.active}}</p>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <label for="protected.unitsInStock">Units in Stock:</label>
+        <input type="text" id="protected.unitsInStock" name="protected.unitsInStock" [(ngModel)]="protected.unitsInStock" required>
+
+        
+        <label for="this.protected.idCategory">Select Category:</label>
+        <div>
+            <select   id="idCategory" name="idCategory" [(ngModel)]="this.protected.idCategory" required>
+                <option  *ngFor="let _category of this.productCategories" [value]="_category.id">{{ _category.categoryName }}</option>
+            </select>
+        </div>
+        
+
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <script>
+        document.getElementById("categoryForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Add category submission logic here
+            alert("Category added!");
+        });
+
+        document.getElementById("productForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Add product submission logic here
+            alert("Product added!");
+        });
+    </script>
+</body>
+
+</html>

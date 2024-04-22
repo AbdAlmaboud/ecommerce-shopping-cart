@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop Login</title>
+</head>
+
+<body>
+<!-- login.component.html -->
+<form (ngSubmit)="onSubmit(loginForm.value)" #loginForm="ngForm">
+    <h2>Login</h2>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" ngModel required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" ngModel required>
+  
+    <button>Log In</button>
+  
+    <a routerLink="/signup" class="signup-link">Don't have an account? Sign up here</a>
+  </form>
+</body>
+
+</html>

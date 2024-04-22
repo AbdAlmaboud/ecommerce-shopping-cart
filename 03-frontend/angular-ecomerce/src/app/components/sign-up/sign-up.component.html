@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop Signup</title>
+</head>
+
+<body>
+    <form id="signupForm" (submit)="onSubmit()">
+        <h2>Sign Up</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" [(ngModel)]="userData.username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+
+        <label for="creditCardNumber">Credit Card Number:</label>
+        <input type="text" id="creditCardNumber" name="creditCardNumber" [(ngModel)]="userData.cardNumber" required>
+
+        <button  type="submit">Sign Up</button>
+        
+        <button routerLink="/login" type="button" class="back-to-login">Back to Login</button>
+    </form>
+</body>
+
+</html>
